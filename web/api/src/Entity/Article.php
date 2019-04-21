@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Entity;
-
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ArticleRepository")
@@ -27,7 +29,7 @@ class Article
     private $Description;
 
     /**
-     * @ORM\Column(type="string", length=30000)
+     * @ORM\Column(type="text", length=16383)
      */
     private $content;
 
