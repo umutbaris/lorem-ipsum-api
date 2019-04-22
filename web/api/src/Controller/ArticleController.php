@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+require '../vendor/autoload.php';
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -14,7 +15,7 @@ use FOS\RestBundle\Controller\Annotations as Rest;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Serializer\Serializer;
 use App\Form\Type\Articles;
-//use Mailgun\Mailgun;
+use Mailgun\Mailgun;
 
 
 
@@ -95,14 +96,13 @@ class ArticleController extends Controller
 			$em->flush();
 
 			if ( $request->get('post_status') == 'approved' ) {
-				// $mg = new Mailgun;
-				// $mg->create('75e8af8778877658427b9950ca3985cc-acb0b40c-d0e0beaf');
-				// $mg->messages()->send('example.com', [
-				// 	'from'    => 'bob@example.com',
-				// 	'to'      => 'umutbariskarasar@outlook.com',
-				// 	'subject' => 'Hello',
-				// 	'text'    => 'Your post is published !'
-				// ]);
+				$mg = Mailgun::create('75e8af8778877658427b9950ca3985cc-acb0b40c-d0e0beaf');
+				$mg->messages()->send('example.com', [
+					'from'    => 'bob@example.com',
+					'to'      => 'umutbariskarasar@outlook.com',
+					'subject' => 'Hello',
+					'text'    => 'Your post is published !'
+				]);
 
 				return new JsonResponse('200, Post Status updated Successfully');
 			} else {
