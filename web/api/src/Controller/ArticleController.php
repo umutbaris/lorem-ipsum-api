@@ -57,6 +57,7 @@ class ArticleController extends AbstractController
 	 */
 	public function post (Request $request)
 	{
+
 		if ( !empty($request->get('title') ) && !empty($request->get('content') )
 		&& !empty($request->get('description') ) && !empty($request->get('mail') )
 		) {
@@ -73,7 +74,7 @@ class ArticleController extends AbstractController
 			$em->flush();
 			return new JsonResponse('200, Post Adding Successfully');
 		} else {
-			return new JsonResponse('401, You should enter all required fields ');
+			return new JsonResponse('401, You should enter all required fields');
 			
 		}
 	}

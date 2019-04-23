@@ -6,6 +6,7 @@
         "ext-ctype": "*",
         "ext-iconv": "*",
         "friendsofsymfony/rest-bundle": "^2.5",
+        "guzzlehttp/guzzle": "^6.3",
         "jms/serializer-bundle": "^3.2",
         "mailgun/mailgun-php": "^2.8",
         "sensio/framework-extra-bundle": "^5.3",
