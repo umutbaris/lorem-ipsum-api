@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-require '../vendor/autoload.php';
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -19,7 +18,7 @@ use Mailgun\Mailgun;
 
 
 
-class ArticleController extends Controller
+class ArticleController extends AbstractController
 {
 	
 	/**
