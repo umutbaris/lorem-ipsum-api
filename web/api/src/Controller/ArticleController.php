@@ -96,13 +96,13 @@ class ArticleController extends AbstractController
 			$em->flush();
 
 			if ( $request->get('post_status') == 'approved' ) {
-				$mg = Mailgun::create('75e8af8778877658427b9950ca3985cc-acb0b40c-d0e0beaf');
-				$mg->messages()->send('example.com', [
-					'from'    => 'bob@example.com',
-					'to'      => 'umutbariskarasar@outlook.com',
-					'subject' => 'Hello',
-					'text'    => 'Your post is published !'
-				]);
+				// $mg = Mailgun::create('75e8af8778877658427b9950ca3985cc-acb0b40c-d0e0beaf');
+				// $mg->messages()->send('example.com', [
+				// 	'from'    => 'bob@example.com',
+				// 	'to'      => 'umutbariskarasar@outlook.com',
+				// 	'subject' => 'Hello',
+				// 	'text'    => 'Your post is published !'
+				// ]);
 
 				return new JsonResponse('200, Post Status updated Successfully');
 			} else {
