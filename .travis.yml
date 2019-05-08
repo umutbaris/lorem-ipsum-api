@@ -4,6 +4,3 @@ services:
 
 before_install:
   - docker build -t umutbariskarasar/lorem-ipsum-api -f Dockerfile-phpfpm .
-
-script:
-  - docker run umutbariskarasar/lorem-ipsum-api npm run test --  --coverage
