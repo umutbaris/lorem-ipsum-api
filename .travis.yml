@@ -5,3 +5,5 @@ services:
 
 before_install:
   - docker build -t umutbariskarasar/lorem-ipsum-api -f Dockerfile-phpfpm .
+  - composer self-update
+  - composer install --no-interaction --prefer-source --dev
