@@ -10,6 +10,6 @@ before_install:
 before_script: 
   - cd web/api 
   - composer self-update
-  - composer install --no-interaction --prefer-source --dev
+  - composer install
 
 script: phpunit
