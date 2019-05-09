@@ -1,8 +1,14 @@
 sudo: required
 language: php
+  - 7.1
 services:
   - docker
 
 before_install:
   - docker build -t umutbariskarasar/lorem-ipsum-api -f Dockerfile-phpfpm .
+
+before_script:
   - composer self-update
+  - composer install --no-interaction --prefer-source --dev
+
+script: phpunit
