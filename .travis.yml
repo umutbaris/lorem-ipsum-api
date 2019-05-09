@@ -8,7 +8,7 @@ before_install:
   - docker build -t umutbariskarasar/lorem-ipsum-api -f Dockerfile-phpfpm .
 
 before_script: 
-  - cd ../web/api 
+  - cd web/api 
   - composer self-update
   - composer install --no-interaction --prefer-source --dev
 
